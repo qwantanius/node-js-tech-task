@@ -1,4 +1,5 @@
 [MONGODB]
+[00] Create Atlas acount and setup data base
 [01] MongoDB Service: MongoDB Client
 [02] User Model
 [03] UsersService: MongoDB child for User tasks

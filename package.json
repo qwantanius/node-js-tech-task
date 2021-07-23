@@ -1,0 +1,23 @@
+{
+  "name": "node-js-tech-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qwantanius/node-js-tech-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qwantanius/node-js-tech-task/issues"
+  },
+  "homepage": "https://github.com/qwantanius/node-js-tech-task#readme",
+  "dependencies": {
+    "mongodb": "^4.0.1"
+  }
+}
