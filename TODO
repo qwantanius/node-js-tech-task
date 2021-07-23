@@ -1,0 +1,7 @@
+[MONGODB]
+[01] MongoDB Service: MongoDB Client
+[02] User Model
+[03] UsersService: MongoDB child for User tasks
+     [] getUser(id:number):User
+     [] deleteUser(id:number):boolean
+     [] createUser(id:number):boolean

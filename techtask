@@ -1,0 +1,22 @@
+1. Сервер на чистом node.js
+
+
+2. Подключить mongoDB и написать модель пользователя:
+- firstname
+- lastname
+- email
+- phone number
+- location(city, address)
+- phone number
+- link to social networks(facebook, linkedIn, twitter, etc.)
+
+
+3. Endpoints на сервере для:
+- создания пользователя по модели - POST
+- получение пользователя по его id - GET
+- удаление пользователя по его id - DELETE
+
+
+4. Endpoint на сервере, который будет генерировать pdf с данными юзера и возвращать файл в респонсе:
+- метод POST
+- тело запроса {userId: <id пользователя>}
