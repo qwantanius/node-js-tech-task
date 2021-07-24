@@ -1,5 +1,5 @@
 module.exports = {
-	createUser: function(user){
+	create: function(user){
 		(async function run(user){
 		  try{
 		    const mongoclient = require('./mongoDBclient').mongoclient;

@@ -1,4 +1,4 @@
-const user = {
+const userMock = {
               "firstname":"FOFOFOFOF",
               "lastname":"FFF",
               "email":"FFFFF.com",
@@ -13,5 +13,5 @@ const user = {
 
 
 
-const createUser = require('./src/createUser').createUser;
-createUser(user);
+const user = require('./src/user');
+user.create(userMock);
