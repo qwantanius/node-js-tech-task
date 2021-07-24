@@ -1,17 +1,17 @@
 const userMock = {
-              "firstname":"FOFOFOFOF",
-              "lastname":"FFF",
-              "email":"FFFFF.com",
+              "firstname":"IIIIIIIYY",
+              "lastname":"YIYIY",
+              "email":"Y*Y*Y*Y.com",
               "location":{
                 "city":"city",
-                "address":"adASDdress"
+                "address":"adIYIYIdress"
               },
               "socialmedia":{
-                "linkedin":"nboFFFFFFv"
+                "linkedin":"nYIYIYIYv"
               },
 };
 
 
 
 const user = require('./src/user');
-user.create(userMock);
+user.del("60fb85ab64faaaf8767c6af4");
