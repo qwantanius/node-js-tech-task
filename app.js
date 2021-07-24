@@ -1,3 +1,5 @@
+const hello = require('./src/hello');
+
 const config = {
   mongo: {
     url : {
@@ -48,3 +50,4 @@ const mongoclient = (function (config){
   return config.mongo.client;
 })(config);
 
+hello.hello();
