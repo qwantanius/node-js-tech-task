@@ -1,7 +1,10 @@
 [MONGODB]
-[00] Create Atlas acount and setup data base
 [01] MongoDB Service: MongoDB Client
+     [V] Connection to db
+     [V] Creating schema from script
 [02] User Model
+     [V] users schema - done
+     [] method for creating users   
 [03] UsersService: MongoDB child for User tasks
      [] getUser(id:number):User
      [] deleteUser(id:number):boolean
