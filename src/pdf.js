@@ -1,6 +1,6 @@
 module.exports = {
 
-  saveToPDF: function(user,id){
+  save: function(user,id){
     let table = `DUMP PDF OBJECT : ${id} <h3>${user.firstname} ${user.lastname}</h3>`;
     table += "<html><head><title>DUMP PDF OBJECT</title></head><body><table>";
     table += "<tr><th>KEY</th><th>VALUE</th>";
