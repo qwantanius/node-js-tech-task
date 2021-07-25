@@ -4,4 +4,5 @@ curl -d "" -X DELETE http://localhost:8080/del/60fb845f2d8302ae673c57a6
 USE FOR CREATING
 curl -d '{"firstname":"MockUserFirstName","lastname":"MockUserLastName","email":"useremail@mock.com","location":{"city":"MockCity","address":"MockAddress"},"socialmedia":{"linkedin":"MockLinkedIn"}}' -H "Content-Type: application/json" -X POST http://localhost:8080/create/
 
-
+__ USE FOR PDF CREATING
+curl -d '{"firstname":"MockUserFirstName","lastname":"MockUserLastName","email":"useremail@mock.com","location":{"city":"MockCity","address":"MockAddress"},"socialmedia":{"linkedIn":"MockLinkedIn"}}' -H "Content-Type: application/json" -X POST http://localhost:8080/pdf/
