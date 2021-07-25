@@ -13,47 +13,47 @@ const uri = "mongodb://127.0.0.1:27017";
 
 //delete user
 app.delete('/del/:id', (req, res) => {
- try{
-  require('./src/mongoDBclient');
-  const mongoclient = new MongoClient(uri);
-  mongoclient.connect()
-  let id = req.params.id;
-  id = id !== undefined ? id :
-    res.json("ID cannot be empty");
-  user.del(mongoclient,id);
-  res.json("OK");
- } catch (e){
-  res.json("CANNOT DELETE:",e);
- }
+  try{
+    require('./src/mongoDBclient');
+    const mongoclient = new MongoClient(uri);
+    mongoclient.connect()
+    let id = req.params.id;
+    id = id !== undefined ? id :
+      res.json("ID cannot be empty");
+    user.del(mongoclient,id);
+    res.json("OK");
+  } catch (e){
+    res.json("CANNOT DELETE:",e);
+  }
 });
 
 
 //get user
 app.get('/get/:id', (req, res) => {
- try{
-  const mongoclient = new MongoClient(uri);
-  mongoclient.connect()
-  let id = req.params.id;
-  mongofind.find(id,function(user){
-    res.json(user);
-  });
- } catch (e) {
-  res.json("CANNOT GET USER",e);
- }
+  try{
+    const mongoclient = new MongoClient(uri);
+    mongoclient.connect()
+    let id = req.params.id;
+    mongofind.find(id,function(user){
+      res.json(user);
+    });
+  } catch (e) {
+    res.json("CANNOT GET USER",e);
+  }
 });
 
 
 //create user
 app.use(bodyParser.json());
 app.post('/create/', (req, res) => {
- try{
-  const mongoclient = new MongoClient(uri);
-  mongoclient.connect()
-  user.create(mongoclient,req.body);
-  res.json("OK");
- } catch (e) {
-  res.json(e);
- }
+  try{
+    const mongoclient = new MongoClient(uri);
+    mongoclient.connect()
+    user.create(mongoclient,req.body);
+    res.json("OK");
+  } catch (e) {
+    res.json(e);
+  }
 });
 
 
@@ -79,8 +79,6 @@ app.post('/pdf/', function (req, res) {
     res.json("CANNOT CREATE PDF",e);
   }
 });
-
-
 
 
 app.listen(8080);

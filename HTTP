@@ -7,5 +7,20 @@ curl -d '{"firstname":"MockUserFirstName","lastname":"MockUserLastName","email":
 USE TO GET PDF FILE
 curl -d '{"id":"60fdbf179159fd9a2a923ce8"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pdf/ --output user.pdf
 
+DOWNLOAD JSON USER
 wget http://localhost:8080/get/60fdbf179159fd9a2a923ce8
 
+
+
+
+
+examples of 2 created users:
+
+wget http://localhost:8080/get/60fdbf179159fd9a2a923ce8
+wget http://localhost:8080/get/60fddf699c03b2e9022ed67b
+
+curl -d '{"id":"60fddf689c03b2e9022ed67a"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pdf/ --output user60fddf689c03b2e9022ed67a.pdf
+curl -d '{"id":"60fddf699c03b2e9022ed67b"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pdf/ --output user60fddf699c03b2e9022ed67b.pdf
+
+curl -d "" -X DELETE http://localhost:8080/del/60fddf689c03b2e9022ed67a
+curl -d "" -X DELETE http://localhost:8080/del/60fddf699c03b2e9022ed67b

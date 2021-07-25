@@ -1,8 +1,9 @@
 module.exports = {
 
- random:{users:[]},
+ mock:{users:[]},
 
  generate: function (count){
+  let res = [];
   for(let userCounter=0; userCounter<=count; userCounter++){
     ran = {
       "firstname" : "MockFirstName",
@@ -29,11 +30,10 @@ module.exports = {
         ran[index] += String(userCounter);
       }
     }
-    this.random.users.push(ran);
+    res.push(ran);
   }
-  return this
+  return res;
  }
-
 }
 
 
