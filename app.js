@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const fs = require('fs')
 const pdf = require('html-pdf');
+const mongofind = require('./src/mongofind');
 
 
 //delete user
@@ -20,7 +21,9 @@ app.delete('/del/:id', (req, res) => {
 //get user
 app.get('/get/:id', (req, res) => {
   let id = req.params.id;
-  res.json(user.get(id));
+  mongofind.find( id,function(user){
+    res.json(user);
+  });
 });
 
 
@@ -35,18 +38,20 @@ app.post('/create/', (req, res) => {
 //send pdf
 app.post('/pdf/', function (req, res) {
     let id = req.body.id;
-    const objectPDF = formatToPDF.save(user.get(id),id);
-    let options = { "format": "A4", };
-    pdf.create(objectPDF, options)
-      .toFile(`./pdf/user.pdf`, function(err, result) {
-        if (err) return console.log(err);
-          let file = fs.createReadStream(`./pdf/user.pdf`);
-          let stat = fs.statSync('./pdf/user.pdf');
-            res.setHeader('Content-Length', stat.size);
-            res.setHeader('Content-Type', 'application/pdf');
-            res.setHeader('Content-Disposition', `attachment; filename=user.pdf`);
-          file.pipe(res);
-      });
+    mongofind.find(id,function(user){
+      const objectPDF = formatToPDF.save(user,id);
+      let options = { "format": "A4", };
+      pdf.create(objectPDF, options)
+        .toFile(`./pdf/user.pdf`, function(err, result) {
+          if (err) return console.log(err);
+            let file = fs.createReadStream(`./pdf/user.pdf`);
+            let stat = fs.statSync('./pdf/user.pdf');
+              res.setHeader('Content-Length', stat.size);
+              res.setHeader('Content-Type', 'application/pdf');
+              res.setHeader('Content-Disposition', `attachment; filename=user.pdf`);
+            file.pipe(res);
+        });
+    });
 });
 
 

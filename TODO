@@ -6,7 +6,7 @@
      [V] users schema - done
      [V] method for creating users   
 [03] UsersService: MongoDB child for User tasks
-     [X] getUser(id:number):User | cannot solve error
+     [V] getUser(id:number):User | cannot solve error
          will user mock method to change mind with
          creating server routes
      [V] deleteUser(id:number):boolean
@@ -14,3 +14,5 @@
 
 [SERVER]
 PDF method : done
+PDF sender : done
+
