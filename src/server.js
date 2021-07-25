@@ -1,11 +1,20 @@
-var express = require("express");
-var app = express();
-app.listen(3000, () => {
- console.log("Server running on port 3000");
+const user = require('./user');
+const mongoclient = require('./mongoDBclient').mongoclient;
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+
+const { MongoClient } = require("mongodb");
+client = new MongoClient("mongodb://127.0.0.1:27017");
+
+app.post('/del', (req, res) => {
+  user.del(req.body.id);
+  res.sendStatus(200);
 });
 
 
-//router
-app.get("/url", (req, res, next) => {
- res.json(["Tony","Lisa","Michael","Ginger","Food"]);
-});
+
+app.listen(8080, () => console.log(`Server running at http://localhost:8080`));
+

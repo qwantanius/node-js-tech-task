@@ -1,0 +1,3 @@
+USE FOR DELETING
+curl -d "id=60fb84ea8c58c8968fd55e92" -X POST http://localhost:8080/del
+

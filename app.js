@@ -1,3 +1,11 @@
+const user = require('./src/user');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+
+
+
+
 const userMock = {
   "firstname":"MockUserFirstName",
   "lastname":"MockUserLastName",
@@ -13,7 +21,15 @@ const userMock = {
 
 
 
-const user = require('./src/user');
-user.del("60fb857d5c545418381988e0");
+
+
+
+app.delete('/del/:id', (req, res) => {
+  const id = req.params.id;
+  user.del(id);
+  res.json("OK");
+ })
+
+app.listen(8080);
 
 
