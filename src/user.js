@@ -32,5 +32,20 @@ module.exports = {
     return this;
   },
 
+  get: function(id){
+    console.log(id);
+    return {
+      "firstname":"MockUserFirstName",
+      "lastname":"MockUserLastName",
+      "email":"useremail@mock.com",
+      "location":{
+        "city":"MockCity",
+        "address":"MockAddress"
+      },
+        "socialmedia":{
+        "linkedin":"MockLinkedIn"
+      },
+    }
+  },
 }
 

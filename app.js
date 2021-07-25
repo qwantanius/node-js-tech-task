@@ -1,19 +1,35 @@
-const userMock = {
-  "firstname":"MockUserFirstName",
-  "lastname":"MockUserLastName",
-  "email":"useremail@mock.com",
-  "location":{
-    "city":"MockCity",
-    "address":"MockAddress"
-  },
-  "socialmedia":{
-    "linkedin":"MockLinkedIn"
-  },
-};
-
-
-
 const user = require('./src/user');
-user.del("60fb857d5c545418381988e0");
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+
+
+//delete user
+app.delete('/del/:id', (req, res) => {
+  let id = req.params.id;
+  id = id !== undefined ? id :
+    res.json("ID cannot be empty");
+  user.del(id);
+  res.json("OK");
+});
+
+
+//get user
+app.get('/get/:id', (req, res) => {
+  let id = req.params.id;
+  res.json(user.get(id));
+});
+
+
+//create user
+app.use(bodyParser.json());
+app.post('/create/', (req, res) => {
+  user.create(req.body);
+  res.json("OK");
+});
+
+
+app.listen(8080);
+
 
 
