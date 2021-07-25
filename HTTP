@@ -1,8 +1,11 @@
-USE FOR DELETING
+USE FOR DELETING USER
 curl -d "" -X DELETE http://localhost:8080/del/60fb6f7b341a5c434ef9d55f
 
-USE FOR CREATING
+USE FOR CREATING USER
 curl -d '{"firstname":"MockUserFirstName","lastname":"MockUserLastName","email":"useremail@mock.com","location":{"city":"MockCity","address":"MockAddress"},"socialmedia":{"linkedin":"MockLinkedIn"}}' -H "Content-Type: application/json" -X POST http://localhost:8080/create/
 
 USE TO GET PDF FILE
 curl -d '{"id":"60fdbf179159fd9a2a923ce8"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pdf/ --output user.pdf
+
+wget http://localhost:8080/get/60fdbf179159fd9a2a923ce8
+
