@@ -5,31 +5,27 @@ const app = express();
 
 
 
-
-const userMock = {
-  "firstname":"MockUserFirstName",
-  "lastname":"MockUserLastName",
-  "email":"useremail@mock.com",
-  "location":{
-    "city":"MockCity",
-    "address":"MockAddress"
-  },
-  "socialmedia":{
-    "linkedin":"MockLinkedIn"
-  },
-};
-
-
-
-
-
-
 app.delete('/del/:id', (req, res) => {
-  const id = req.params.id;
+  let id = req.params.id;
+  id = id !== undefined ? id :
+    res.json("ID cannot be empty");
   user.del(id);
   res.json("OK");
- })
+})
+
+app.get('/get/:id', (req, res) => {
+  let id = req.params.id;
+  res.json(user.get(id));
+})
+
+
+
+
+
+
+
 
 app.listen(8080);
+
 
 
