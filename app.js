@@ -33,8 +33,8 @@ app.post('/create/', (req, res) => {
 
 
 //send pdf
-app.get('/pdf/:id', function (req, res) {
-    let id = req.params.id;
+app.post('/pdf/', function (req, res) {
+    let id = req.body.id;
     const objectPDF = formatToPDF.save(user.get(id),id);
     let options = { "format": "A4", };
     pdf.create(objectPDF, options)
@@ -51,6 +51,5 @@ app.get('/pdf/:id', function (req, res) {
 
 
 app.listen(8080);
-
 
 
