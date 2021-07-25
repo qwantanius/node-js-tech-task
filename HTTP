@@ -5,4 +5,4 @@ USE FOR CREATING
 curl -d '{"firstname":"MockUserFirstName","lastname":"MockUserLastName","email":"useremail@mock.com","location":{"city":"MockCity","address":"MockAddress"},"socialmedia":{"linkedin":"MockLinkedIn"}}' -H "Content-Type: application/json" -X POST http://localhost:8080/create/
 
 USE TO GET PDF FILE
-curl -d '{"id":"test"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pdf/60fb6f7b341a5c434ef9d55f --output user.pdf
+curl -d '{"id":"60fdbf179159fd9a2a923ce8"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pdf/ --output user.pdf

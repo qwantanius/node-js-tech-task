@@ -3,8 +3,8 @@ const { ObjectId } = require('mongodb');
 
 module.exports = {
 
-  create: function(user){
-    (async function run(user){
+  create: function(mongoclient,user){
+    (async function run(mongoclient,user){
       try{
         await mongoclient.db("ufo")
           .collection("users")
@@ -13,14 +13,18 @@ module.exports = {
       } catch(e){
         console.log(e);
       }
-    })(user).catch(console.dir);
+    })(mongoclient,user).catch(console.dir);
     return this;
   },
 
 
-  del: function(id){
-    (async function run(id){
+  del: function(mongoclient,id){
+    (async function run(mongoclient,id){
       try{
+        const { MongoClient } = require("mongodb");
+        const uri = "mongodb://127.0.0.1:27017";
+        const mongoclient = new MongoClient(uri);
+        await mongoclient.connect();
         await mongoclient.db("ufo")
           .collection("users")
           .deleteOne({_id: new ObjectId(id)});
@@ -28,7 +32,7 @@ module.exports = {
       } catch(e){
         console.log(e);
       }
-    })(id).catch(console.dir);
+    })(mongoclient,id).catch(console.dir);
     return this;
   },
 
