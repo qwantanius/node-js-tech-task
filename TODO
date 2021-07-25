@@ -6,6 +6,10 @@
      [V] users schema - done
      [V] method for creating users   
 [03] UsersService: MongoDB child for User tasks
-     [] getUser(id:number):User
+     [X] getUser(id:number):User | cannot solve error
+         will user mock method to change mind with
+         creating server routes
      [V] deleteUser(id:number):boolean
      [V] createUser(id:number):boolean
+
+[SERVER]

@@ -1,21 +1,19 @@
 const userMock = {
-              "firstname":"IIIIIIIYY",
-              "lastname":"YIYIY",
-              "email":"Y*Y*Y*Y.com",
-              "location":{
-                "city":"city",
-                "address":"adIYIYIdress"
-              },
-              "socialmedia":{
-                "linkedin":"nYIYIYIYv"
-              },
+  "firstname":"MockUserFirstName",
+  "lastname":"MockUserLastName",
+  "email":"useremail@mock.com",
+  "location":{
+    "city":"MockCity",
+    "address":"MockAddress"
+  },
+  "socialmedia":{
+    "linkedin":"MockLinkedIn"
+  },
 };
 
 
 
 const user = require('./src/user');
+user.del("60fb857d5c545418381988e0");
 
 
-
-
-user.del("60fb8755f174182d65e85e64");
