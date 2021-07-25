@@ -3,7 +3,6 @@ const { ObjectId } = require('mongodb');
 
 module.exports = {
 
-
 	create: function(user){
 		(async function run(user){
 		  try{
@@ -31,9 +30,5 @@ module.exports = {
                 })(id).catch(console.dir);
                 return this;
         },
-
-        get: function(id){
-
-        }
 }
 

@@ -14,4 +14,8 @@ const userMock = {
 
 
 const user = require('./src/user');
-user.del("60fb85ab64faaaf8767c6af4");
+
+
+
+
+user.del("60fb8755f174182d65e85e64");

@@ -7,5 +7,5 @@
      [V] method for creating users   
 [03] UsersService: MongoDB child for User tasks
      [] getUser(id:number):User
-     [] deleteUser(id:number):boolean
-     [] createUser(id:number):boolean
+     [V] deleteUser(id:number):boolean
+     [V] createUser(id:number):boolean
