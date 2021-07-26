@@ -81,6 +81,8 @@ app.post('/pdf/', function (req, res) {
 });
 
 
+
+require('./src/banner').banner();
 app.listen(8080);
 
 
